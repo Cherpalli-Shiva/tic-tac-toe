@@ -80,7 +80,7 @@ jobs:
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
-    output:
+    outputs:
       image_tag: ${{ steps.docker_build.outputs.image_tag }}
     steps:
       - name: Checkout code
