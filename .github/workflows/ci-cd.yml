@@ -117,7 +117,8 @@ jobs:
         with:
           context: .
           push: false
-          tags: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           load: true
       
       - name: Run Trivy vulnerability scan
@@ -136,7 +137,7 @@ jobs:
           context: .
           push: true
           file: ./Dockerfile
-          tags: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Set image tag output
